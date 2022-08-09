@@ -1,0 +1,52 @@
+.v-list-card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 25px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+li.v-item-card {
+  background: #fff;
+  box-shadow: 2px 2px 10px -1px #00000026;
+  border-radius: 6px;
+  min-height: 100%;
+  padding: 15px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.settings {
+  display: flex;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 10px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.title-card {
+  margin: 0 0 20px;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.title-card b {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.85em;
+  opacity: 0.75;
+}
+
+.title-card:first-letter {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+

@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700;800&display=swap');
+:root{
+  font-family: Nunito, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+*{
+  box-sizing: border-box;
+}
+html {
+  background: #F5F6FA;
+  min-height: 100vh;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
+}
+
+.MainLayout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-gap: 35px;
+  padding: 35px;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+}
+
+ul[class*="menu"] {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.btn {
+  background: #0054FE;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  display: inline-flex;
+  padding: 0.6em 1.2em;
+  line-height: 1.4;
+  font-size: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+.icon {
+  display: block;
+  margin-right: 10px;
+}
+
+svg {
+  width: 1.25em;
+  height: 1em;
+  font-size: 1.1em;
+  display: block;
+  color: inherit;
+  fill: currentColor;
+}
+
+.menu-item a {
+  display: flex;
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: color ease 0.4s;
+}
+
+.menu-item .icon {
+  color: #3B5CE7;
+}
+
+.menu-item a:hover {
+  color: #3B5CE7;
+}
+.MainContent {
+  display: grid;
+  grid-gap: 35px;
+  grid-template-rows: auto 1fr;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+  align-items: center;
+}
+
+.col {
+  padding: 10px;
+}
+.col-12{
+  width: 100%;
+}
+.text-center{
+  text-align: center;
+}
+.wrapper-module {
+  background: #fff;
+  box-shadow: 2px 2px 10px -1px #00000026;
+  border-radius: 6px;
+  padding: 20px;
+}
+.btn-icon {
+  min-width: 2.5em;
+  height: 2.5em;
+  padding: 0.5em;
+  border-radius: 5em;
+  color: #0054fe;
+  font-weight: 700;
+  border: 1px solid #0054fe;
+  background: transparent;
+  margin: 5px;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all ease 0.4s;
+}
+
+.btn-icon.active, .btn-icon:hover {
+  background: #0054fe;
+  color: #fff;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: all ease 0.5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0
+}
+.badge {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  color: var(--color);
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 4px;
+  font-size: 0.9em;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+--color: #444;
+}
+
+.badge::before {
+  content: '';
+  position: absolute;
+  background: var(--color);
+  inset: 0;
+  opacity: 0.25;
+}
+.btns-group {
+  display: flex;
+  align-items: center;
+  margin: -4px;
+}
+
+.icons {
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2em;
+  font-size: 13px;
+  border-radius: 100%;
+  margin: 5px;
+  border: 1px solid var(--color);
+  color: var(--color);--color: #444;
+  cursor: pointer;
+  transition: all ease 0.4s;
+}
+
+.icons.check, .success {
+  --color: #43b000;
+}
+
+.icons.trash, .danger {
+	--color: #ff4d4d;
+}
+.icons.active, .icons:hover {
+  background: var(--color);
+  color: #fff;
+}
+
+.tools-btns {
+  display: flex;
+  flex-wrap: wrap;
+}
+.modules{
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-gap: 20px;
+}
+.main-title {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.pagination{
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

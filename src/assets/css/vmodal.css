@@ -1,0 +1,109 @@
+.vModal {
+  position: fixed;
+  z-index: 1050;
+  inset: 0;
+} 
+.icons > *+* {
+  margin-left: 1rem;
+} 
+.vModelOverlay {
+  position: relative;
+  min-height: 100%;
+  padding:20px;
+  display: flex;
+  flex-direction: column;
+  inset: 0;
+  background: #00000080;
+  z-index: 1;
+} 
+.vModalContainer {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 6px;
+  background: #fff;
+  z-index: 2;
+  position: relative;
+} 
+.vModalHeader, .vModalFooter {
+  padding: 20px 25px;
+  line-height: 1;
+  font-size: 18px;
+  font-weight: 500;
+  background: #fbfbfb;
+  z-index: 6;
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} 
+.vModalHeader {
+  top: 0;
+  border-radius:6px 6px 0 0;
+  border-bottom: 1px solid #ebe9f1;
+} 
+.vModalFooter {
+  bottom: 0;
+  border-radius:0 0 6px 6px;
+  border-top: 1px solid #ebe9f1;
+} 
+.vModelContent {
+  z-index: 0;
+  padding: 20px 25px;
+} 
+.vModalClose {
+  width: 1.25em;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  color: #000000;
+  opacity: 0.5;
+} 
+.vModalClose svg {
+  width: auto;
+  display: block;
+  height: 1em;
+  fill: currentColor;
+} 
+.vModal.sideBar .vModelOverlay {
+  background: transparent;
+  padding: 0;
+  height: 100%;
+} 
+.vModal.sideBar .vModalContainer {
+  border-radius: 0;
+  box-shadow: 0px 0 10px #00000026;
+  margin-right: 0;
+  pointer-events: auto;
+  overflow-y: auto;
+  min-height: 100%;
+} 
+.vModal.sideBar.sideBarOverlay .vModelOverlay::before {
+  content: '';
+  background: #000000;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  right: 100%;
+  position: absolute;
+  top: 0;
+  opacity: 0.5;
+  cursor: pointer;
+} 
+.fade-enter-active, .fade-leave-active {
+  transition: opacity ease 0.5s;
+} 
+.fade-enter, .fade-leave-to {
+  opacity: 0
+} 
+.slide-to-left-enter-active, .slide-to-left-leave-active {
+  transition: transform ease 0.4s
+} 
+.slide-to-left-enter, .slide-to-left-leave-to {
+  transform:translateX(100%);
+} 
+.slide-to-left-enter-active.vModal.sideBar.sideBarOverlay .vModelOverlay::before, .slide-to-left-leave-active.vModal.sideBar.sideBarOverlay .vModelOverlay::before {
+  transition: opacity ease 0.4s
+} 
+.slide-to-left-enter.vModal.sideBar.sideBarOverlay .vModelOverlay::before, .slide-to-left-leave-to.vModal.sideBar.sideBarOverlay .vModelOverlay::before{
+  opacity: 0;
+}

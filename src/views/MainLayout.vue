@@ -1,14 +1,19 @@
 <template>
-	<section>
+	<section class="MainLayout">
 		<div class="SideBar">
-			<Panel></Panel>
+			<Panel/>
 		</div>
 		<div class="MainContent">
 			<header>
-				<Header></Header>
+				<Header/>
 			</header>
-			<main>
-				<router-view/>
+			<main class="modules">
+				<h1 class="main-title">
+					{{$route.meta.title}}
+				</h1>
+					<router-view/>
+				<!-- <transition name="fade">
+				</transition> -->
 			</main>
 		</div>
 	</section>
@@ -16,8 +21,8 @@
 
 <script>
 
-	import Header from '@/components/layout/Header'
-	import Panel from '@/components/layout/Panel'
+	import Header from '@/views/layout/Header'
+	import Panel from '@/views/layout/Panel'
 	export default {
 
 		name: 'MainLayout',
@@ -25,10 +30,5 @@
 			Header,
 			Panel
 		},
-		data () {
-			return {
-
-			}
-		}
 	}
 </script>

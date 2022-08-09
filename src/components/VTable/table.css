@@ -1,0 +1,13 @@
+.v-table {
+  text-align: left;
+  width: 100%;
+}
+
+.v-table tr > * {
+  padding: 20px 25px;
+  line-height: 1.6;
+}
+
+.v-table tbody tr:nth-child(odd) {
+  background: #F5F6FA;
+}

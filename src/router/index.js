@@ -6,18 +6,34 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: '/login'
+    redirect: '/login',
+    component: () => import('@/views/MainLayout'),
+    children: [{
+      path: '/users',
+      name: 'users',
+      meta:{
+        title: 'Users',
+      },
+      component: () => import('@/pages/Users'),
+    },
+    {
+      path: '/users/:id/todos',
+      name: 'todos',
+      meta: {
+        title: 'Todos',
+      },
+      component: () => import('@/pages/Todos')
+    }]
   },
   {
     path: '/login',
     name: 'login',
+    meta: {
+      isPublic: true
+    },
     component: () => import('@/pages/Login')
   },
-  {
-    path: '/users',
-    name: 'users',
-    component: () => import('@/pages/Users')
-  }
+  
 ]
 
 const router = new VueRouter({
@@ -27,8 +43,12 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
+  if(!to.meta.isPublic && !localStorage.user)
+    return next({name: 'login'});
   
-
+  if(to.meta.isPublic && localStorage.user)
+    return next({name: 'users'});
+  
   return next();
 });
 
