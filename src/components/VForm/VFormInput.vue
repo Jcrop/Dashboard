@@ -1,5 +1,5 @@
 <template>
-	<fieldset class="fieldset-form">
+	<fieldset class="fieldset-form" :class="{error}">
     <legend class="legend-form" :class="{'field-required': input.required}">{{input.label}}</legend>
     <component :is="input.is ? input.is : 'input'" @input="inputValue" v-bind="input.prop" class="control-from"/>
   </fieldset>
@@ -15,6 +15,9 @@
 			},
 			value: {
 				default: () => null
+			},
+			error:{
+				type: Boolean
 			}
 		},
 		model:{

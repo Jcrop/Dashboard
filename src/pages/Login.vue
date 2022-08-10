@@ -40,6 +40,11 @@
 			onSubmit(event){
 				localStorage.user = JSON.stringify(event);
 				this.$router.push({name: 'users'});
+				this.$toast.open({
+				  message: 'Successful Login',
+				  type: 'info',
+				  position: 'top-right'
+				});
 			}
 		}
 	}

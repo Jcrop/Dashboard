@@ -47,9 +47,6 @@
 								is: 'textarea',
 								label: 'Title',
 								required: true,
-								prop:{
-
-								}
 							}
 						}
 					}
@@ -65,17 +62,25 @@
 			this.$store.dispatch('Todos/getTodos', {id: this.$route.params.id});
 		},
 		methods: {
-			onSubmit(){;
-				let {title} = this.$refs['modal'].onSubmit();
-		    let todo = {
-					userId: this.$route.params.id,
-			    id: this.list[0].id,
-			    title,
-			    completed: false
-		    }
-		    this.$store.commit('Todos/UPDATE_TODO', todo);
-		    this.modal.state = false;
-		  }
+		  onSubmit(){
+				this.$refs['modal'].onSubmit()
+				.then(res => {
+					if(res){
+						Object.assign(res, {
+							userId: this.$route.params.id,
+					    id: Number(this.list[0].id + 1),
+					    completed: false
+				    });
+						this.$store.commit('Todos/ADD_TODO', res)
+						this.$toast.open({
+						  message: 'Successful Registration',
+						  type: 'success',
+						  position: 'top-right'
+						});
+						this.modal.state = false;
+					}
+				});
+			}
 		}
 	}
 </script>

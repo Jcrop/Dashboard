@@ -1,6 +1,6 @@
 <template>
 	<div class="wrapper-list">
-		<ul class="v-list-card">
+		<ul class="v-list-card" v-if="list.length">
 			<li v-for="item in list.slice(page.start, page.end)" :key="item.id" class="v-item-card">
 				<h3 class="title-card">
 					{{item.title}}
@@ -20,6 +20,9 @@
 				</div>
 			</li>
 		</ul>
+		<div v-else class="alert">
+			There are no Todos registered
+		</div>
 		<div class="pagination">
 			<button v-for="i in pages" :key="i" @click="currentPage = i" class="btn-icon" :class="{active: i == currentPage}">
 				{{i}}
@@ -62,10 +65,20 @@
 	  	checkTodo(item){
 	  		Object.assign(item,{
 	  			completed: !item.completed
-	  		})
+	  		});
+	  		this.$toast.open({
+				  message: 'Successful Update',
+				  type: 'success',
+				  position: 'top-right'
+				});
 	  	},
 	  	deleteTodo(item){
 	  		this.$store.commit('Todos/DELETE_TODO', item);
+	  		this.$toast.open({
+				  message: 'Successful Removal',
+				  type: 'success',
+				  position: 'top-right'
+				});
 	  	}
 	  }
 	}

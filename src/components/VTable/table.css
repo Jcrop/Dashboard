@@ -11,3 +11,25 @@
 .v-table tbody tr:nth-child(odd) {
   background: #F5F6FA;
 }
+.v-table th {
+  color: #3b5ce7;
+}
+@media(max-width: 1500px){
+  .v-table tr {
+    --col: 3;
+    display: grid;
+    grid-template-columns: repeat(var(--col), 1fr);
+  }
+
+  .v-table thead {
+    display: none;
+  }
+
+  .v-table tr td::before {
+    content: attr(data-label);
+    display: block;
+    font-weight: 700;
+    font-size: 0.8em;
+    color: #3b5ce7;
+  }
+}

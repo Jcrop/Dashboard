@@ -11,9 +11,9 @@
 				<h1 class="main-title">
 					{{$route.meta.title}}
 				</h1>
+				<transition name="fade" mode="out-in">
 					<router-view/>
-				<!-- <transition name="fade">
-				</transition> -->
+				</transition>
 			</main>
 		</div>
 	</section>
