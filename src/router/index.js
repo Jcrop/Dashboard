@@ -33,6 +33,14 @@ const routes = [
     },
     component: () => import('@/pages/Login')
   },
+  {
+    path: '*',
+    name: 'not-found',
+    meta: {
+      isPublic: true
+    },
+    component: () => import('@/pages/NotFound')
+  },
   
 ]
 
