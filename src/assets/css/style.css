@@ -51,6 +51,7 @@ ul[class*="menu"] {
   font-size: 16px;
   align-items: center;
   cursor: pointer;
+  text-decoration: none;
 }
 .icon {
   display: block;
